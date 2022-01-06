@@ -1,0 +1,62 @@
+﻿@model ProjetoIndigenas.Models.Denuncia
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Denuncia</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PessoaID" class="control-label"></label>
+                <select asp-for="PessoaID" class="form-control" asp-items="ViewBag.PessoaID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tipo" class="control-label"></label>
+                <select asp-for="Tipo" class="form-control">
+                    <option selected>Selecione um Tipo</option>
+                    <option value="Queimada">Queimada</option>
+                    <option value="Desmatamento">Desmatamento</option>
+                    <option value="Mineração">Mineração</option>
+                    <option value="Caça">Caça Ilegal</option>
+                    <option value="Invasão">Invasão</option>
+                    <option value="Outros">Outros</option>
+                </select>
+                <span asp-validation-for="Tipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Localizacao" class="control-label"></label>
+                <input asp-for="Localizacao" class="form-control" />
+                <span asp-validation-for="Localizacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UltimaAtt" class="control-label"></label>
+                <input asp-for="UltimaAtt" class="form-control" />
+                <span asp-validation-for="UltimaAtt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}
