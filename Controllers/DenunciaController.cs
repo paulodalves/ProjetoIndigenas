@@ -21,7 +21,7 @@ namespace ProjetoIndigenas.Controllers
         // GET: Denuncias
         public async Task<IActionResult> Index()
         {
-            var contexto = _context.Denuncia.Include(d => d.Pessoa);
+            var contexto = _context.Denuncias.Include(d => d.Pessoa);
             return View(await contexto.ToListAsync());
         }
 
@@ -33,7 +33,7 @@ namespace ProjetoIndigenas.Controllers
                 return NotFound();
             }
 
-            var denuncia = await _context.Denuncia
+            var denuncia = await _context.Denuncias
                 .Include(d => d.Pessoa)
                 .FirstOrDefaultAsync(m => m.DenunciaID == id);
             if (denuncia == null)
@@ -47,7 +47,7 @@ namespace ProjetoIndigenas.Controllers
         // GET: Denuncias/Create
         public IActionResult Create()
         {
-            ViewData["PessoaID"] = new SelectList(_context.Pessoa, "PessoaID", "PessoaID");
+            ViewData["PessoaID"] = new SelectList(_context.Pessoas, "PessoaID", "PessoaID");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace ProjetoIndigenas.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            ViewData["PessoaID"] = new SelectList(_context.Pessoa, "PessoaID", "PessoaID", denuncia.PessoaID);
+            ViewData["PessoaID"] = new SelectList(_context.Pessoas, "PessoaID", "PessoaID", denuncia.PessoaID);
             return View(denuncia);
         }
 
@@ -77,12 +77,12 @@ namespace ProjetoIndigenas.Controllers
                 return NotFound();
             }
 
-            var denuncia = await _context.Denuncia.FindAsync(id);
+            var denuncia = await _context.Denuncias.FindAsync(id);
             if (denuncia == null)
             {
                 return NotFound();
             }
-            ViewData["PessoaID"] = new SelectList(_context.Pessoa, "PessoaID", "PessoaID", denuncia.PessoaID);
+            ViewData["PessoaID"] = new SelectList(_context.Pessoas, "PessoaID", "PessoaID", denuncia.PessoaID);
             return View(denuncia);
         }
 
@@ -118,7 +118,7 @@ namespace ProjetoIndigenas.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PessoaID"] = new SelectList(_context.Pessoa, "PessoaID", "PessoaID", denuncia.PessoaID);
+            ViewData["PessoaID"] = new SelectList(_context.Pessoas, "PessoaID", "PessoaID", denuncia.PessoaID);
             return View(denuncia);
         }
 
@@ -130,7 +130,7 @@ namespace ProjetoIndigenas.Controllers
                 return NotFound();
             }
 
-            var denuncia = await _context.Denuncia
+            var denuncia = await _context.Denuncias
                 .Include(d => d.Pessoa)
                 .FirstOrDefaultAsync(m => m.DenunciaID == id);
             if (denuncia == null)
@@ -146,15 +146,15 @@ namespace ProjetoIndigenas.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var denuncia = await _context.Denuncia.FindAsync(id);
-            _context.Denuncia.Remove(denuncia);
+            var denuncia = await _context.Denuncias.FindAsync(id);
+            _context.Denuncias.Remove(denuncia);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool DenunciaExists(int id)
         {
-            return _context.Denuncia.Any(e => e.DenunciaID == id);
+            return _context.Denuncias.Any(e => e.DenunciaID == id);
         }
     }
 }

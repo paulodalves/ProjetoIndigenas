@@ -21,7 +21,7 @@ namespace ProjetoIndigenas.Controllers
         // GET: Pessoas
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Pessoa.ToListAsync());
+            return View(await _context.Pessoas.ToListAsync());
         }
 
         // GET: Pessoas/Details/5
@@ -32,7 +32,9 @@ namespace ProjetoIndigenas.Controllers
                 return NotFound();
             }
 
-            var pessoa = await _context.Pessoa
+            var pessoa = await _context.Pessoas
+                .Include(s => s.Denuncias)
+                .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.PessoaID == id);
             if (pessoa == null)
             {
@@ -72,7 +74,7 @@ namespace ProjetoIndigenas.Controllers
                 return NotFound();
             }
 
-            var pessoa = await _context.Pessoa.FindAsync(id);
+            var pessoa = await _context.Pessoas.FindAsync(id);
             if (pessoa == null)
             {
                 return NotFound();
@@ -123,7 +125,7 @@ namespace ProjetoIndigenas.Controllers
                 return NotFound();
             }
 
-            var pessoa = await _context.Pessoa
+            var pessoa = await _context.Pessoas
                 .FirstOrDefaultAsync(m => m.PessoaID == id);
             if (pessoa == null)
             {
@@ -138,15 +140,15 @@ namespace ProjetoIndigenas.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var pessoa = await _context.Pessoa.FindAsync(id);
-            _context.Pessoa.Remove(pessoa);
+            var pessoa = await _context.Pessoas.FindAsync(id);
+            _context.Pessoas.Remove(pessoa);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool PessoaExists(int id)
         {
-            return _context.Pessoa.Any(e => e.PessoaID == id);
+            return _context.Pessoas.Any(e => e.PessoaID == id);
         }
     }
 }

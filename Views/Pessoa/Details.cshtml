@@ -52,9 +52,29 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.DatNasc)
         </dd>
-       
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Denuncias)
+        </dt>
+        <dd class="col-sm-10">
+            <table class="table">
+                <tr>
+                    <th>Tipo</th>
+                    <th>Localização</th>
+                </tr>
+                @foreach (var item in Model.Denuncias)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tipo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Localizacao)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
     </dl>
-
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.PessoaID">Edit</a> |
