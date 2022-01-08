@@ -1,48 +1,49 @@
 ﻿@model ProjetoIndigenas.Models.Denuncia
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes";
 }
 
-<h1>Details</h1>
+<div class="titulo">
+    <div class="bloco-titulo"></div><h1 class="centraliza-titulo"><strong>Detalhes da Denúncia</strong></h1>
+</div>
 
-<div>
-    <h4>Denuncia</h4>
-    <hr />
+<div class="cor-form">
+
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Tipo)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tipo):
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Tipo)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Localizacao)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Localizacao):
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Localizacao)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Descricao)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Descricao):
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Descricao)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UltimaAtt)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UltimaAtt):
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.UltimaAtt)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Pessoa)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pessoa):
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Pessoa.PessoaID)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pessoa.Nome)
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.DenunciaID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.DenunciaID"class="btn btn-success btn-sm">Atualizar Denúncia</a>
+        <a asp-action="Index"class="btn btn-primary btn-sm">Voltar</a>
+    </div>
 </div>

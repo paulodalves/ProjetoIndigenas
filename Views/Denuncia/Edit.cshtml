@@ -1,15 +1,15 @@
 ﻿@model ProjetoIndigenas.Models.Denuncia
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Atualizar";
 }
 
-<h1>Edit</h1>
+<div class="titulo">
+    <div class="bloco-titulo"></div><h1 class="centraliza-titulo"><strong>Atualizar Denúncia</strong></h1>
+</div>
 
-<h4>Denuncia</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="row centraliza-form">
+    <div class="col-md-4 cor-form">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="DenunciaID" />
@@ -45,17 +45,16 @@
                 <input asp-for="UltimaAtt" class="form-control" />
                 <span asp-validation-for="UltimaAtt" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="form-group btn-espaco">
+                <input type="submit" value="Salvar Alterações" class="btn btn-success btn-sm" />
+                <a asp-action="Index"class="btn btn-primary btn-sm">Cancelar</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
 }

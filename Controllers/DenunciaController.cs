@@ -56,7 +56,7 @@ namespace ProjetoIndigenas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DenunciaID,PessoaID,Tipo,Localizacao,Descricao,DatDenuncia")] Denuncia denuncia)
+        public async Task<IActionResult> Create([Bind("DenunciaID,PessoaID,Tipo,Localizacao,Descricao,UltimaAtt")] Denuncia denuncia)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace ProjetoIndigenas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("DenunciaID,PessoaID,Tipo,Localizacao,Descricao,DatDenuncia")] Denuncia denuncia)
+        public async Task<IActionResult> Edit(int id, [Bind("DenunciaID,PessoaID,Tipo,Localizacao,Descricao,UltimaAtt")] Denuncia denuncia)
         {
             if (id != denuncia.DenunciaID)
             {

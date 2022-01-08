@@ -1,16 +1,17 @@
 ﻿@model IEnumerable<ProjetoIndigenas.Models.Pessoa>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Usuários";
 }
-
-<h1>Index</h1>
+<div class="titulo">
+    <div class="bloco-titulo"></div><h1 class="centraliza-titulo"><strong>Usuários Cadastrados</strong></h1>
+</div>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-success btn-sm">Novo Cadastro</a>
 </p>
-<table class="table">
-    <thead>
+<table class="table table-hover table-responsive-sm tabelas">
+    <thead class="thead-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Nome)
@@ -61,9 +62,9 @@
                 @Html.DisplayFor(modelItem => item.DatNasc)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.PessoaID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PessoaID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PessoaID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.PessoaID" class="btn btn-primary btn-sm">Atualizar</a>
+                <a asp-action="Details" asp-route-id="@item.PessoaID" class="btn btn-warning btn-sm">Perfil</a>
+                <a asp-action="Delete" asp-route-id="@item.PessoaID" class="btn btn-danger btn-sm">Apagar</a>
             </td>
         </tr>
 }

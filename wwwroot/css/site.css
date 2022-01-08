@@ -1,5 +1,10 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
 
 a.navbar-brand {
   white-space: normal;
@@ -68,4 +73,170 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+
+/* -------------------------------- Estilos costumizados ------------------------------- */
+
+/* GERAL */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    margin: 0;
+}
+
+.bloco-titulo {
+    width: 10px;
+    height: 40px;
+    background: #0022C8;
+    margin-right: 10px;
+    box-shadow: 2px 2px #D60000;
+}
+.centraliza-titulo {
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+.centraliza-texto {
+    text-align: center;
+}
+
+.cor-de-fundo-corpo {
+    background: #FFDD00;
+}
+
+
+/* Inicio Página - CONTATO */
+.contato-conteudo {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.contato-fundo {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 2px 4px 1px grey;
+}
+
+.lado-lado {
+    display: flex;
+}
+
+.linha-vertical {
+    width: 1px;
+    height:90px;
+    border: solid 1px black;
+    margin: 0 50px 0 50px;
+}
+
+.centraliza-linha {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* Fim Página - CONTATO */
+
+/* Inicio Página - Pessoa */
+
+.tabelas {
+    background: white;
+    box-shadow: 2px 4px 1px grey;
+}
+
+.centraliza-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.cor-form {
+    background: white;
+    padding-top: 30px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 2px 4px 1px grey;
+}
+
+.btn-espaco{
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+}
+
+h3{
+    margin-left:45px;
+    color:white;
+    padding-bottom:15px;
+}
+
+.fundo-mapa-conteudo {
+    display: flex;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 2px 4px 1px grey;
+}
+
+.h1-home {
+    text-align: center;
+    color: white;
+    padding: 30px;
+    font-size: 70px;
+    text-shadow: 2px 4px #558ABB;
+    transition: 0.5s;
+}
+
+.h5-home {
+    text-align: center;
+    color: white;
+    background: #0022C8;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 2px 4px 1px #D60000;
+}
+
+.texto-home{
+    text-align:justify;
+}
+
+@media screen and (max-width: 1000px) {
+    .fundo-mapa-conteudo {
+        flex-direction: column;
+    }
+
+    iframe {
+        margin: 0 auto;
+        display: block;
+        transition: 0.5s;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    iframe {
+        width: 400px;
+        height: 250px;
+        transition: 0.5s;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .h1-home {
+        font-size: 60px;
+        transition: 0.5s;
+    }
 }

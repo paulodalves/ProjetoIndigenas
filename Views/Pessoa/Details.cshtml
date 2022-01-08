@@ -1,82 +1,81 @@
 ﻿@model ProjetoIndigenas.Models.Pessoa
-
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Perfil";
 }
 
-<h1>Details</h1>
+<div class="titulo">
+    <div class="bloco-titulo"></div><h1 class="centraliza-titulo"><strong>Perfil</strong></h1>
+</div>
 
-<div>
-    <h4>Pessoa</h4>
-    <hr />
+<div class="cor-form">
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
+            @Html.DisplayNameFor(model => model.Nome):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Nome)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cpf_Rani)
+            @Html.DisplayNameFor(model => model.Cpf_Rani):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Cpf_Rani)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tel1)
+             @Html.DisplayNameFor(model => model.Tel1):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Tel1)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tel2)
+            @Html.DisplayNameFor(model => model.Tel2):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Tel2)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
+            @Html.DisplayNameFor(model => model.Email):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Email)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Senha)
+            @Html.DisplayNameFor(model => model.Senha):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Senha)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DatNasc)
+            @Html.DisplayNameFor(model => model.DatNasc):
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.DatNasc)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Denuncias)
-        </dt>
-        <dd class="col-sm-10">
-            <table class="table">
-                <tr>
-                    <th>Tipo</th>
-                    <th>Localização</th>
-                </tr>
-                @foreach (var item in Model.Denuncias)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Tipo)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Localizacao)
-                        </td>
-                    </tr>
-                }
-            </table>
-        </dd>
     </dl>
+    <div>
+    <a asp-action="Edit" asp-route-id="@Model.PessoaID" class="btn btn-success btn-sm">Atualizar Pessoa</a>
+    <a asp-action="Index" class="btn btn-primary btn-sm">Voltar</a>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.PessoaID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
 </div>
+<h3 style="padding-top:20px;">Denúncia(s) realizada(s) pelo Usuário</h3>
+<table class="table table-hover table-responsive-sm tabelas">
+    <thead class="thead-dark">
+        <tr>
+            <th>Tipo</th>
+            <th>Localização</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Denuncias)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Localizacao)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,19 +1,21 @@
 ﻿@model IEnumerable<ProjetoIndigenas.Models.Denuncia>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Denúncias";
 }
 
-<h1>Index</h1>
+<div class="titulo">
+    <div class="bloco-titulo"></div><h1 class="centraliza-titulo"><strong>Denúncias Realizadas</strong></h1>
+</div>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-success btn-sm">Nova Denúncia</a>
 </p>
-<table class="table">
-    <thead>
+<table class="table table-hover table-responsive-sm tabelas">
+    <thead class="thead-dark">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Tipo)
+                                @Html.DisplayNameFor(model => model.Tipo)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Localizacao)
@@ -49,9 +51,9 @@
                 @Html.DisplayFor(modelItem => item.Pessoa.PessoaID)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.DenunciaID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.DenunciaID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.DenunciaID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.DenunciaID" class="btn btn-primary btn-sm">Atualizar</a>
+                <a asp-action="Details" asp-route-id="@item.DenunciaID" class="btn btn-warning btn-sm">Detalhes</a>
+                <a asp-action="Delete" asp-route-id="@item.DenunciaID" class="btn btn-danger btn-sm">Apagar</a>
             </td>
         </tr>
 }

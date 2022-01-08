@@ -1,45 +1,45 @@
 ﻿@model ProjetoIndigenas.Models.Pessoa
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Cadastrar";
 }
 
-<h1>Create</h1>
+<div class="titulo">
+    <div class="bloco-titulo"></div><h1 class="centraliza-titulo"><strong>Cadastrar Pessoa</strong></h1>
+</div>
 
-<h4>Pessoa</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="row centraliza-form">
+    <div class="col-md-4 cor-form">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
+                <input asp-for="Nome" maxlength="40" placeholder="Lucas Matheus" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Cpf_Rani" class="control-label"></label>
-                <input asp-for="Cpf_Rani" class="form-control" />
+                <input asp-for="Cpf_Rani" maxlength="14" placeholder="1553030330" class="form-control" />
                 <span asp-validation-for="Cpf_Rani" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Tel1" class="control-label"></label>
-                <input asp-for="Tel1" class="form-control" />
+                <input asp-for="Tel1" maxlength="20" placeholder="2124282828" class="form-control" />
                 <span asp-validation-for="Tel1" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Tel2" class="control-label"></label>
-                <input asp-for="Tel2" class="form-control" />
+                <input asp-for="Tel2" maxlength="20" placeholder="21974282828" class="form-control" />
                 <span asp-validation-for="Tel2" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <input asp-for="Email" maxlength="40" placeholder="lucas@email.com" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Senha" class="control-label"></label>
-                <input asp-for="Senha" class="form-control" />
+                <input asp-for="Senha" maxlength="20" placeholder="1#78nf7" class="form-control" />
                 <span asp-validation-for="Senha" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -47,15 +47,12 @@
                 <input asp-for="DatNasc" class="form-control" />
                 <span asp-validation-for="DatNasc" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="form-group btn-espaco">
+                <input type="submit" value="Confirmar Cadastro" class="btn btn-success btn-sm" />
+                <a asp-action="Index" class="btn btn-primary btn-sm">Cancelar</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
