@@ -84,6 +84,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+
 .titulo {
     display: flex;
     align-items: center;
@@ -94,12 +95,12 @@ body {
 .bloco-titulo {
     width: 10px;
     height: 40px;
-    background: #0022C8;
+    background: #D60000;
     margin-right: 10px;
-    box-shadow: 2px 2px #D60000;
+    box-shadow: 2px 2px black;
 }
 .centraliza-titulo {
-    color: white;
+    color: black;
     padding: 0;
     margin: 0;
 }
@@ -108,8 +109,17 @@ body {
     text-align: center;
 }
 
+.cor-menu {
+    background: black;
+}
+
 .cor-de-fundo-corpo {
-    background: #FFDD00;
+    background: #FFFED5;
+}
+
+footer {
+    background: black;
+
 }
 
 
@@ -178,7 +188,7 @@ body {
 
 h3{
     margin-left:45px;
-    color:white;
+    color:black;
     padding-bottom:15px;
 }
 
@@ -192,26 +202,31 @@ h3{
 
 .h1-home {
     text-align: center;
-    color: white;
-    padding: 30px;
+    color: black;
+    padding: 1px;
+    padding-top:30px;
     font-size: 70px;
-    text-shadow: 2px 4px #558ABB;
+    text-shadow: 2px 2px #D60000;
     transition: 0.5s;
 }
 
 .h5-home {
     text-align: center;
     color: white;
-    background: #0022C8;
+    background: #D60000;
     width: fit-content;
     margin: 0 auto;
     padding: 5px;
     border-radius: 5px;
-    box-shadow: 2px 4px 1px #D60000;
+    box-shadow: 2px 4px 1px black;
 }
 
-.texto-home{
-    text-align:justify;
+.h1-home-cor{
+    color:black;
+}
+
+.texto-home {
+    text-align: justify;
 }
 
 @media screen and (max-width: 1000px) {

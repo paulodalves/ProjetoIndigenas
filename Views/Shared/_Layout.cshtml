@@ -12,8 +12,8 @@
           crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="cor-de-fundo-corpo">
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-success border-bottom box-shadow mb-3">
+    <header class="cor-menu">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" style="color:white;" asp-area="" asp-controller="Home" asp-action="Index">Aldeia Segura</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -47,9 +47,8 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top text-light footer bg-success">
-        <div class="container centraliza-texto">
+    <footer class="border-top cor-footer text-light footer">
+        <div class="container cor-footer centraliza-texto">
             &copy; 2022 - Projeto Indígenas
         </div>
     </footer>
